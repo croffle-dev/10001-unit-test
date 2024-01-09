@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo "install"
-      - git clone https://github.com/croffle-dev/10001 source
+      - git clone $REPO_URL source
       - mv tests source
       - ls -la
       - cd source && npm install
