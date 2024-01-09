@@ -7,8 +7,8 @@ phases:
       - git clone $REPO_URL source
       - mv tests source
       - ls -la
-      - curl -fsSL https://bun.sh/install | bash
-      - cd source && ~/.bun/bin/bun install
+      - npm install -g bun
+      - cd source && bun install
   pre_build:
     commands:
       - echo "pre build"
@@ -16,7 +16,7 @@ phases:
     commands:
       - echo "build"
       - pwd
-      - ~/.bun/bin/bun add -D vitest
+      - bun add -D vitest
       - ./node_modules/.bin/vitest
   post_build:
     commands:
