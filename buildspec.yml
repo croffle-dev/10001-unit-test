@@ -4,14 +4,19 @@ phases:
   install:
     commands:
       - echo "install"
-      - git clone https://github.com/croffle-dev/10001
+      - git clone https://github.com/croffle-dev/10001 source
+      - mv tests source
       - ls -la
+      - cd source && npm install
   pre_build:
     commands:
       - echo "pre build"
   build:
     commands:
       - echo "build"
+      - pwd
+      - npm install -D vitest
+      - ./node_modules/.bin/vitest
   post_build:
     commands:
       - echo "post_build"
