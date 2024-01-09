@@ -7,7 +7,7 @@ phases:
       - git clone $REPO_URL source
       - mv tests source
       - ls -la
-      - pnpm install -g pnpm
+      - npm install -g pnpm
       - cd source && pnpm install
   pre_build:
     commands:
