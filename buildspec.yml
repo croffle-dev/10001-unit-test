@@ -7,8 +7,8 @@ phases:
       - git clone $REPO_URL source
       - mv tests source
       - ls -la
-      - npm install -g bun
-      - cd source && bun install
+      - pnpm install -g bun
+      - cd source && pnpm install
   pre_build:
     commands:
       - echo "pre build"
@@ -16,8 +16,8 @@ phases:
     commands:
       - echo "build"
       - pwd
-      - bun add -D vitest
+      - pnpm add -D vitest
       - ./node_modules/.bin/vitest
   post_build:
     commands:
-      - echo "post_build"
+      - echo "post build"
