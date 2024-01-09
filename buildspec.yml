@@ -4,6 +4,8 @@ phases:
   install:
     commands:
       - echo "install"
+      - git clone https://github.com/croffle-dev/10001
+      - ls -la
   pre_build:
     commands:
       - echo "pre build"
