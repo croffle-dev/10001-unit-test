@@ -8,8 +8,7 @@ phases:
       - mv tests source
       - ls -la
       - curl -fsSL https://bun.sh/install | bash
-      - source ~/.bashrc
-      - cd source && bun install
+      - cd source && ~/.bun/bin/bun install
   pre_build:
     commands:
       - echo "pre build"
@@ -17,7 +16,7 @@ phases:
     commands:
       - echo "build"
       - pwd
-      - bun add -D vitest
+      - ~/.bun/bin/bun add -D vitest
       - ./node_modules/.bin/vitest
   post_build:
     commands:
